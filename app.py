@@ -14,5 +14,10 @@ def hello_world():
     <p>Click to visit other page: <a href="/count">here</a></p>
     '''
 
+@app.route('/count')
+def count():
+    count = r.incr('visits')
+    return f'There has been {count} visitors'
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
