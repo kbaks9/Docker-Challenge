@@ -1,12 +1,5 @@
-FROM python:3.11-alpine
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+FROM python:3.8-slim
+WORKDIR /myapp
 COPY . .
-
-EXPOSE 5000
-
-CMD ["python", "app.py"]
+RUN pip install flask redis
+CMD ["python", "myapp3.py"]
