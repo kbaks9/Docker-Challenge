@@ -3,7 +3,7 @@ This is a simple Flask web application that tracks and displays visitor counts u
 It comes fully containerized with Docker for easy setup and deployment. 
 The homepage provides a welcome message, and a separate page shows the current visitor count.  
 
-![Overview GIF](images/counter.gif)
+![Visitor count](https://github.com/user-attachments/assets/d96a6ab5-aaa4-45e1-9d15-f4c6ec769a13)
 
 ## Features
 - Homepage (`/`) with a welcome message.  
