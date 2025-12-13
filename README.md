@@ -10,7 +10,9 @@ The homepage provides a welcome message, and a separate page shows the current v
 - Visitor count page (`/count`) that increments using Redis.  
 - Custom CSS styling for a clean and simple layout.  
 - Fully containerized with Docker for easy setup and deployment.  
-- Nginx reverse proxy planned (not added yet) to serve the app and static files efficiently.  
+- Persistent storage.
+- Environment variables (to be added).
+- Loading balancing nginx (to be added).
 
 ## How to Run
 Build the Docker image:
