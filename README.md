@@ -76,14 +76,17 @@ docker compose down
 
 PROJECT STRUCTURE
 
-.
+
 ├── app.py
 ├── Dockerfile
 ├── docker-compose.yaml
 ├── static/
 │   └── style.css
 ├── templates/
-│   └── index.html
+│   └── home.html
+│   └── count.html
+├── images/
+│   └── counter.gif
 └── README.md
 
 --------------------------------------------------
