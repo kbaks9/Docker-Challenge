@@ -6,7 +6,8 @@ The application is fully containerized using Docker and Docker Compose for easy 
 The homepage displays a welcome message, while a separate endpoint tracks and increments the number of visits.
 
 Visitor count screenshot:
-https://github.com/user-attachments/assets/d96a6ab5-aaa4-45e1-9d15-f4c6ec769a13
+![Visitor count](https://github.com/user-attachments/assets/1b5ce9a5-0e0e-4aaf-8d10-c857adbede9b)
+
 
 --------------------------------------------------
 
