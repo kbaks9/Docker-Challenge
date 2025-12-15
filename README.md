@@ -1,36 +1,101 @@
 # Docker-Challenge: Flask + Redis
-This is a simple Flask web application that tracks and displays visitor counts using Redis. 
-It comes fully containerized with Docker for easy setup and deployment. 
-The homepage provides a welcome message, and a separate page shows the current visitor count.  
 
-![Visitor count](https://github.com/user-attachments/assets/d96a6ab5-aaa4-45e1-9d15-f4c6ec769a13)
+This project is a simple Flask web application that tracks and displays visitor counts using Redis as a backend datastore.
+The application is fully containerized using Docker and Docker Compose for easy setup, consistent environments, and reproducible builds.
 
-## Features
-- Homepage (`/`) with a welcome message.  
-- Visitor count page (`/count`) that increments using Redis.  
-- Custom CSS styling for a clean and simple layout.  
-- Fully containerized with Docker for easy setup and deployment.  
-- Persistent storage.
-- Environment variables (to be added).
-- Loading balancing nginx (to be added).
+The homepage displays a welcome message, while a separate endpoint tracks and increments the number of visits.
 
-## How to Run
-Build the Docker image:
-docker build -t flask-app .
+Visitor count screenshot:
+https://github.com/user-attachments/assets/d96a6ab5-aaa4-45e1-9d15-f4c6ec769a13
 
-Run the container:
-docker run -p 5002:5002 flask-app
+--------------------------------------------------
 
-Open your browser at:
-http://localhost:5002/
-Visit `/count` to see the visitor count incremented on each visit.
+FEATURES
 
-## How to Stop & Remove
-Stop the container (replace <container_id> with your container ID):
-docker stop <container_id>
+- Homepage (/) with a welcome message
+- Visitor count endpoint (/count) backed by Redis
+- Persistent Redis storage using Docker volumes
+- Custom CSS styling
+- Multi-container setup using Docker Compose
+- Environment variables for service configuration
+- Scalable architecture (load balancing via Nginx planned)
 
-Remove the container:
-docker rm <container_id>
+--------------------------------------------------
 
-Remove the image (optional):
-docker rmi flask-app
+PREREQUISITES
+
+- Docker
+- Docker Compose (v2 recommended)
+
+--------------------------------------------------
+
+HOW TO RUN
+
+Clone the repository and run:
+
+docker compose up --build
+
+Once the containers are running, open your browser:
+
+Application: http://localhost:5002
+Visitor counter: http://localhost:5002/count
+
+--------------------------------------------------
+
+SCALING THE WEB SERVICE
+
+The web service can be scaled horizontally using Docker Compose:
+
+docker compose up --scale web=3
+
+Note:
+When scaling the Flask service, a reverse proxy such as Nginx is required to load-balance traffic across multiple containers.
+Nginx integration is planned for a future update.
+
+--------------------------------------------------
+
+ENVIRONMENT VARIABLES
+
+The application uses the following environment variables:
+
+- REDIS_HOST – Redis service hostname (default: redis)
+- REDIS_PORT – Redis port (default: 6379)
+
+These are configured automatically via docker-compose.yaml.
+
+--------------------------------------------------
+
+STOPPING THE APPLICATION
+
+To stop and remove all containers, networks, and volumes:
+
+docker compose down
+
+--------------------------------------------------
+
+PROJECT STRUCTURE
+
+.
+├── app.py
+├── Dockerfile
+├── docker-compose.yaml
+├── static/
+│   └── style.css
+├── templates/
+│   └── index.html
+└── README.md
+
+--------------------------------------------------
+
+FUTURE IMPROVEMENTS
+
+- Add Nginx reverse proxy for load balancing
+- Replace Flask development server with Gunicorn
+- Improve environment configuration and secrets handling
+- Add health checks and monitoring
+
+--------------------------------------------------
+
+LICENSE
+
+This project is for learning and demonstration purposes.

@@ -16,6 +16,5 @@ def count():
     visitor_count = r.incr('visits')  # define visitor_count variable
     return render_template('count.html', count=visitor_count)
 
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5002)
