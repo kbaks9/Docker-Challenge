@@ -11,7 +11,7 @@ Visitor count screenshot:
 
 --------------------------------------------------
 
-FEATURES
+### FEATURES:
 
 - Homepage (/) with a welcome message
 - Visitor count endpoint (/count) backed by Redis
@@ -23,18 +23,11 @@ FEATURES
 
 --------------------------------------------------
 
-PREREQUISITES
-
-- Docker
-- Docker Compose (v2 recommended)
-
---------------------------------------------------
-
-HOW TO RUN
+### HOW TO RUN:
 
 Clone the repository and run:
 
-docker compose up --build
+```docker compose up --build```
 
 Once the containers are running, open your browser:
 
@@ -43,7 +36,7 @@ Visitor counter: http://localhost:5002/count
 
 --------------------------------------------------
 
-SCALING THE WEB SERVICE
+### SCALING THE WEB SERVICE:
 
 The web service can be scaled horizontally using Docker Compose:
 
@@ -55,7 +48,7 @@ Nginx integration is planned for a future update.
 
 --------------------------------------------------
 
-ENVIRONMENT VARIABLES
+### ENVIRONMENT VARIABLES:
 
 The application uses the following environment variables:
 
@@ -66,17 +59,17 @@ These are configured automatically via docker-compose.yaml.
 
 --------------------------------------------------
 
-STOPPING THE APPLICATION
+### STOPPING THE APPLICATION:
 
 To stop and remove all containers, networks, and volumes:
 
-docker compose down
+```docker compose down```
 
 --------------------------------------------------
 
-PROJECT STRUCTURE
+### PROJECT STRUCTURE:
 
-
+```
 ├── app.py
 ├── Dockerfile
 ├── docker-compose.yaml
@@ -88,10 +81,10 @@ PROJECT STRUCTURE
 ├── images/
 │   └── counter.gif
 └── README.md
-
+```
 --------------------------------------------------
 
-FUTURE IMPROVEMENTS
+### FUTURE IMPROVEMENTS:
 
 - Add Nginx reverse proxy for load balancing
 - Replace Flask development server with Gunicorn
